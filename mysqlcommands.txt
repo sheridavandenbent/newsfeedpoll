@@ -1,0 +1,16 @@
+CREATE DATABASE IF NOT EXISTS newsfeedpoll;
+USE newsfeedpoll;
+
+DROP TABLE IF EXISTS newsitems;
+CREATE TABLE newsitems (
+   id int NOT NULL AUTO_INCREMENT,
+   title VARCHAR(100),
+   url VARCHAR(100),
+   description TEXT,
+   image VARCHAR(100),
+   pubdate DATETIME,
+   source VARCHAR(50),
+   guid INT,
+   PRIMARY KEY (id),
+   UNIQUE KEY (guid, source)
+);
